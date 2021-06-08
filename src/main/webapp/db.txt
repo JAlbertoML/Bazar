@@ -1,0 +1,70 @@
+INSERT INTO Admin(name, surname, lastname, username, password) VALUES ('Señor', 'Taller', 'Gómez', 'admin', '21232f297a57a5a743894a0e4a801fc3');
+INSERT INTO Client(name, surname, lastname, birthday, email, phone, street, number, suburb, townhall, state, country, username, password, postalcode) VALUES ('Alejandro', 'Tapia', 'Correa', '1998-06-09', 'correo@tapia.com', '5512345678', 'Calle inventada', 36, 'Colonia inventada', 'Ecatepec', 'Estado de México', 'México', 'alextapir', '1657f32616640788db9a41d6247fa418', 09873);
+
+
+<!-- Add product Modal -->
+	<div class="modal fade" id="AddProduct" tabindex="-1" role="dialog"
+		aria-labelledby="RegisterLabel" aria-hidden="true">
+		<div class="modal-dialog modal-xl" role="document">
+			<div class="modal-content">
+				<div class="modal-header">
+					<h2 class="modal-title" id="RegisterLabel">Agregar Producto</h2>
+					<button type="button" class="close" data-dismiss="modal"
+						aria-label="Close">
+						<span aria-hidden="true">&times;</span>
+					</button>
+				</div>
+				<div class="modal-body">
+					<p class="error">${message}</p>
+					<p>
+						Si el producto <b>NO</b> tiene descuento, deja ese campo el
+						blanco.
+					</p>
+					<form class="membership-form webform text-center" role="form"
+						method="POST" action="AddProduct">
+						<div class="row">
+							<div class="col-md-8">
+								<div class="row">
+									<div class="col-md-6">
+										<input type="text" class="form-control" name="nameTxt"
+											placeholder="Nombre(s)" value="${client.name}" required>
+									</div>
+									<div class="col-md-3">
+										<input type="number" class="form-control" name="priceTxt"
+											placeholder="Precio" value="${client.surname}" required>
+									</div>
+									<div class="col-md-3">
+										<input type="number" class="form-control" name="discountTxt"
+											placeholder="Descuento" value="${client.lastname}">
+									</div>
+								</div>
+								<div class="row">
+									<div class="col-md-4">
+										<input type="number" class="form-control" name="quantityTxt"
+											placeholder="Cantidad existente" required="required" value="${client.lastname}">
+									</div>
+									<div class="col-md-8">
+										<select class="form-control" name="categoryTxt" required>
+											<option selected="selected" disabled="disabled">Sin seleccionar</option>	
+											<option value="0">Luces</option>	
+											<option value="1">Audio</option>	
+											<option value="2">Aceites</option>	
+											<option value="3">Otros</option>	
+										</select>
+									</div>
+								</div>
+							</div>
+							<div class="col-md-4">
+								<textarea name="descriptionTxt" class="form-control" cols="20"
+									rows="6" placeholder="Descripción" required="required"></textarea>
+							</div>
+						</div>
+						<button type="submit" class="form-control" id="submit-button">Agregar
+							producto</button>
+					</form>
+				</div>
+				<div class="modal-footer"></div>
+			</div>
+		</div>
+	</div>
+
